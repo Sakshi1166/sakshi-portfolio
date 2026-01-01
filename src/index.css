@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #0b1120 0%,
+    #0f1b3d 50%,
+    #0b1120 100%
+  );
+  color: #e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system;
+}
+
+/* Base styles */
+body {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.2s infinite;
+}
+
+/* Bubble pop hover effect */
+.pop-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pop-hover:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+}
+
+/* Desktop font boost */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/*@keyframes webDevFade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.web-dev-animate {
+  display: inline-block;
+  animation: webDevFade 1.4s ease-in-out forwards;
+}*/
+
+/* Bubble pop hover */
+.pop-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pop-hover:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+}
+

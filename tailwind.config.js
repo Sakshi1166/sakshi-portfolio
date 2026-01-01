@@ -1,0 +1,1 @@
+export default {content:['./index.html','./src/**/*.{js,jsx}'],theme:{extend:{colors:{bg:'#0b1120',card:'#111827',accent:'#8b5cf6'}}},plugins:[]};

@@ -32,7 +32,7 @@ export default function Projects() {
         >
           {/* VIDEO PREVIEW */}
           <video
-            src={portfolioVideo}
+            src="/portfolio.mp4"
             muted
             loop
             autoPlay
@@ -86,7 +86,7 @@ export default function Projects() {
         >
           {/* VIDEO PREVIEW */}
           <video
-            src={autogenieVideo}
+            src="/autogenie.mp4"
             muted
             loop
             autoPlay

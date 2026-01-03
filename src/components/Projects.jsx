@@ -89,17 +89,20 @@ export default function Projects() {
           
 
           <video
-            src="/autogenie.mp4"
-            poster="/autogenie-poster.png"
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="w-full h-[220px] object-cover"
-            onMouseEnter={(e) => e.currentTarget.play()}
+             src="/autogenie.mp4"
+             poster="/autogenie-poster.png"
+             muted
+             loop
+             playsInline
+             preload="metadata"
+             className="w-full h-[220px] object-cover"
+             onMouseEnter={(e) => {
+               e.currentTarget.play();
+             }}
             onMouseLeave={(e) => {
               e.currentTarget.pause();
               e.currentTarget.currentTime = 0;
+              e.currentTarget.load(); // 🔥 THIS brings poster back
             }}
           />
 

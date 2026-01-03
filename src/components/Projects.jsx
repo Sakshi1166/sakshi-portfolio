@@ -28,9 +28,10 @@ export default function Projects() {
           viewport={{ amount: 0.25, once: false }}
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden pop-hover"
         >
-          {/* VIDEO PREVIEW */}
+          {/* VIDEO */}
           <video
             src="/portfolio.mp4"
+            poster="/portfolio-poster.png"
             muted
             autoPlay
             loop
@@ -84,9 +85,10 @@ export default function Projects() {
           viewport={{ amount: 0.25, once: false }}
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden pop-hover"
         >
-          {/* VIDEO PREVIEW */}
+          {/* VIDEO */}
           <video
             src="/autogenie.mp4"
+            poster="/autogenie-poster.png"
             muted
             autoPlay
             loop

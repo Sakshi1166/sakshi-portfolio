@@ -31,14 +31,14 @@ export default function Projects() {
           </h3>
 
           <p className="text-gray-300 text-[15px] leading-relaxed mb-6">
-            Developed a responsive personal portfolio website to showcase
-            technical skills, projects, and educational background. Implemented
-            modern UI design principles, smooth scrolling, and interactive
-            components to enhance user experience and accessibility.
+            Designed and developed a fully responsive personal portfolio website to professionally showcase projects, 
+            technical expertise, and academic background. Focused on creating a clean, modern user interface with 
+            intuitive navigation, smooth scrolling, and interactive components to deliver an engaging user experience. 
+            Implemented reusable UI components, optimized performance, and ensured cross‑device compatibility and accessibility. 
           </p>
 
           <p className="text-purple-400 text-sm font-medium">
-            React.js • JavaScript (ES6+) • Tailwind CSS • Vite
+            React.js • JavaScript (ES6+) • Tailwind CSS • Vite • Responsive Design • UI/UX Principles
           </p>
         </motion.div>
 

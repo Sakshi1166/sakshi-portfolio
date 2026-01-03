@@ -74,25 +74,11 @@ body {
 
 /* Bubble pop hover */
 .pop-hover {
-  position: relative;
-  transition: all 0.3s ease;
-  border-radius: 16px; /* 🔥 THIS FIXES CORNERS */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.pop-hover::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  background: rgba(168, 85, 247, 0.25);
-  filter: blur(18px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  border-radius: 20px; /* 🔥 ROUND GLOW */
+.pop-hover:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
 }
-
-.pop-hover:hover::before {
-  opacity: 1;
-}
-
 

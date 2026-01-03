@@ -51,18 +51,21 @@ export default function Projects() {
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-10 pop-hover"
         >
           <h3 className="text-2xl font-semibold text-white mb-3">
-            Daily Task Reminder App
+            AI‑Driven Predictive Maintenance System
           </h3>
 
           <p className="text-gray-300 text-[15px] leading-relaxed mb-6">
-            Built a task management web application that enables users to create,
-            organize, and track daily tasks efficiently. Focused on clean UI,
-            state management, and persistent data handling to improve
-            productivity and usability.
+            Developed an end‑to‑end AI‑powered predictive maintenance solution using a multi‑agent workflow architecture.
+            The system processes real‑time vehicle sensor data, performs machine‑learning–based failure prediction, 
+            and autonomously triggers maintenance actions such as service scheduling, customer notifications, and 
+            manufacturing feedback. Designed to demonstrate intelligent decision‑making, workflow automation, and 
+            scalable system integration.
           </p>
 
           <p className="text-purple-400 text-sm font-medium">
-            React.js • JavaScript • Tailwind CSS • State Management • Local Storage
+            FastAPI • Python • Scikit‑learn • n8n • REST APIs • Webhooks • Cloud Deployment
+
+
           </p>
         </motion.div>
 

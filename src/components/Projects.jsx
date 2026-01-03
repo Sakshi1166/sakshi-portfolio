@@ -86,15 +86,21 @@ export default function Projects() {
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden pop-hover"
         >
           {/* VIDEO */}
+          
+
           <video
             src="/autogenie.mp4"
             poster="/autogenie-poster.png"
             muted
-            autoPlay
             loop
             playsInline
             preload="metadata"
             className="w-full h-[220px] object-cover"
+            onMouseEnter={(e) => e.currentTarget.play()}
+            onMouseLeave={(e) => {
+              e.currentTarget.pause();
+              e.currentTarget.currentTime = 0;
+            }}
           />
 
           <div className="p-8">

@@ -1,56 +1,36 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const contactSection = document.getElementById("contact");
-    if (!contactSection) return;
+    const onScroll = () => {
+      // show only AFTER hero section
+      setVisible(window.scrollY > window.innerHeight * 0.8);
+    };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      { threshold: 0.4 }
-    );
-
-    observer.observe(contactSection);
-    return () => observer.disconnect();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   if (!visible) return null;
 
   return (
-    <motion.button
-      onClick={scrollToTop}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.4 }}
-      className="
-        fixed bottom-8 right-8 z-50
-        w-12 h-12
-        rounded-xl
-        bg-white/10
-        backdrop-blur-md
-        border border-white/10
-        text-white
-        flex items-center justify-center
-        shadow-lg shadow-black/30
-        hover:bg-white/20
-        hover:scale-110
-        transition
-      "
+    <button
+      onClick={() =>
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      }
+      className="fixed bottom-6 right-6 z-50
+                 bg-white/10 hover:bg-white/20
+                 text-white p-3 rounded-full
+                 backdrop-blur-md transition"
+      aria-label="Back to top"
     >
-      ↑
-    </motion.button>
+      <FaArrowUp />
+    </button>
   );
 }

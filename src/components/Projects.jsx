@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import portfolioVideo from "../assets/portfolio-preview.mp4";
-import autogenieVideo from "../assets/autogenie-preview.mp4";
 
 export default function Projects() {
   return (
@@ -13,8 +11,8 @@ export default function Projects() {
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ amount: 0.3, once: false }}
         className="text-[34px] font-semibold text-white mb-14 pop-hover"
       >
         Projects
@@ -26,17 +24,18 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ amount: 0.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ amount: 0.25, once: false }}
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden pop-hover"
         >
           {/* VIDEO PREVIEW */}
           <video
             src="/portfolio.mp4"
             muted
-            loop
             autoPlay
+            loop
             playsInline
+            preload="metadata"
             className="w-full h-[220px] object-cover"
           />
 
@@ -55,11 +54,11 @@ export default function Projects() {
               React • Tailwind CSS • Vite • UI/UX
             </p>
 
-            {/* LINKS */}
             <div className="flex gap-6 items-center">
               <a
                 href="https://github.com/Sakshi1166/sakshi-portfolio"
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"
               >
                 <FaGithub /> Code
@@ -68,6 +67,7 @@ export default function Projects() {
               <a
                 href="https://sakshi-nigam.vercel.app/"
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"
               >
                 <FaExternalLinkAlt /> Live Demo
@@ -80,17 +80,18 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          viewport={{ amount: 0.25 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          viewport={{ amount: 0.25, once: false }}
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden pop-hover"
         >
           {/* VIDEO PREVIEW */}
           <video
             src="/autogenie.mp4"
             muted
-            loop
             autoPlay
+            loop
             playsInline
+            preload="metadata"
             className="w-full h-[220px] object-cover"
           />
 
@@ -100,20 +101,20 @@ export default function Projects() {
             </h3>
 
             <p className="text-gray-300 text-[15px] leading-relaxed mb-5">
-              An AI-powered predictive maintenance system using machine learning
-              and agent-based workflows to detect failures and automate
-              maintenance actions.
+              An AI-powered predictive maintenance system using machine
+              learning and agent-based workflows to detect failures and
+              automate maintenance actions.
             </p>
 
             <p className="text-purple-400 text-sm mb-6">
               FastAPI • Python • Scikit-learn • n8n • Cloud
             </p>
 
-            {/* LINKS */}
             <div className="flex gap-6 items-center">
               <a
                 href="https://github.com/your-github/autogenie"
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"
               >
                 <FaGithub /> Code
@@ -122,6 +123,7 @@ export default function Projects() {
               <a
                 href="https://autogenie.vercel.app/"
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"
               >
                 <FaExternalLinkAlt /> Live Demo

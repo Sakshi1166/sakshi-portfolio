@@ -112,7 +112,7 @@ export default function Projects() {
 
             <div className="flex gap-6 items-center">
               <a
-                href="https://github.com/your-github/autogenie"
+                href="https://github.com/Sakshi1166/autogenie"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"

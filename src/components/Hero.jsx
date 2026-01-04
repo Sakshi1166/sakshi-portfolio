@@ -6,13 +6,18 @@ export default function Hero() {
   const [typedText, setTypedText] = useState("");
   const [showModal, setShowModal] = useState(false);
   const imgRef = useRef(null);
+  const hasTyped = useRef(false); // prevents infinite retrigger
 
   const fullText = "A Web Developer";
 
-  // TYPEWRITER — re-triggers on scroll
+  // TYPEWRITER (runs once when hero enters viewport)
   const startTyping = () => {
+    if (hasTyped.current) return;
+    hasTyped.current = true;
+
     setTypedText("");
     let i = 0;
+
     const interval = setInterval(() => {
       setTypedText(fullText.slice(0, i + 1));
       i++;
@@ -20,7 +25,7 @@ export default function Hero() {
     }, 120);
   };
 
-  // MAGNETIC EFFECT
+  // MAGNETIC IMAGE EFFECT
   useEffect(() => {
     const el = imgRef.current;
     if (!el) return;
@@ -33,7 +38,7 @@ export default function Hero() {
     };
 
     const reset = () => {
-      el.style.transform = "translate(0,0)";
+      el.style.transform = "translate(0, 0)";
     };
 
     el.addEventListener("mousemove", move);
@@ -49,9 +54,12 @@ export default function Hero() {
     <>
       {/* HERO SECTION */}
       <motion.section
+        id="hero"                       // ✅ REQUIRED FOR BACKTOTOP
         onViewportEnter={startTyping}
         viewport={{ amount: 0.6 }}
-        className="min-h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center gap-16 px-6 md:px-12 lg:px-[90px]"
+        className="min-h-screen w-full flex flex-col-reverse lg:flex-row
+                   items-center justify-center gap-16
+                   px-6 md:px-12 lg:px-[90px]"
       >
         {/* LEFT CONTENT */}
         <div className="max-w-[620px] text-center lg:text-left">
@@ -76,7 +84,9 @@ export default function Hero() {
           <a
             href="/Sakshi_Nigam_Resume.pdf"
             download
-            className="inline-block bg-purple-600 hover:bg-purple-700 transition px-8 py-4 rounded-xl text-white text-[16px] font-semibold pop-hover"
+            className="inline-block bg-purple-600 hover:bg-purple-700
+                       transition px-8 py-4 rounded-xl
+                       text-white text-[16px] font-semibold pop-hover"
           >
             Download Resume
           </a>
@@ -87,7 +97,10 @@ export default function Hero() {
           <div
             ref={imgRef}
             onClick={() => setShowModal(true)}
-            className="w-[300px] h-[300px] md:w-[360px] md:h-[360px] rounded-full border-[6px] border-purple-500 flex items-center justify-center transition-transform duration-300"
+            className="w-[300px] h-[300px] md:w-[360px] md:h-[360px]
+                       rounded-full border-[6px] border-purple-500
+                       flex items-center justify-center
+                       transition-transform duration-300"
           >
             <img
               src={profile}
@@ -106,7 +119,8 @@ export default function Hero() {
       {/* IMAGE MODAL */}
       {showModal && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/80 z-50
+                     flex items-center justify-center"
           onClick={() => setShowModal(false)}
         >
           <img

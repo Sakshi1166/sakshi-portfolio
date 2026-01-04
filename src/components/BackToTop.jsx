@@ -1,56 +1,55 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function BackToTop() {
-  const [visible, setVisible] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const contactSection = document.getElementById("contact");
-    if (!contactSection) return;
+    const heroSection = document.getElementById("hero");
+    if (!heroSection) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setVisible(entry.isIntersecting);
+        // Show arrow ONLY when hero is NOT visible
+        setShow(!entry.isIntersecting);
       },
-      { threshold: 0.4 }
+      {
+        threshold: 0.6,
+      }
     );
 
-    observer.observe(contactSection);
+    observer.observe(heroSection);
+
     return () => observer.disconnect();
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (!visible) return null;
+  if (!show) return null;
 
   return (
     <motion.button
       onClick={scrollToTop}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      aria-label="Back to top"
       className="
-        fixed bottom-8 right-8 z-50
-        w-12 h-12
-        rounded-xl
-        bg-white/10
-        backdrop-blur-md
-        border border-white/10
+        fixed bottom-6 right-6 z-50
+        p-4 rounded-full
+        bg-white/10 backdrop-blur-md
+        border border-white/20
         text-white
-        flex items-center justify-center
-        shadow-lg shadow-black/30
-        hover:bg-white/20
+        hover:bg-purple-600
         hover:scale-110
-        transition
+        transition-all duration-300
       "
     >
-      ↑
+      <FaArrowUp />
     </motion.button>
   );
 }

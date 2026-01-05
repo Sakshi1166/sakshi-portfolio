@@ -45,9 +45,5 @@ The focus is on **clean UI/UX**, smooth animations, responsiveness, and modern f
 ---
 
 
-## 📂 Project Structure
-=======
 
-
->>>>>>> ab2597d8b2edf25c56231f806318274e84f74b22
 

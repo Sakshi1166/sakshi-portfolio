@@ -104,19 +104,22 @@ export default function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative cursor-pointer">
+        <div className="relative cursor-pointer mt-16 sm:mt-10 md:mt-0">
           <div
             ref={imgRef}
             onClick={() => setShowModal(true)}
             className="
-              w-[220px] h-[220px]
-              sm:w-[280px] sm:h-[280px]
+              w-[200px] h-[200px]          /* mobile smaller */
+              sm:w-[260px] sm:h-[260px]
               md:w-[360px] md:h-[360px]
-              rounded-full border-[6px] border-purple-500
+
+              rounded-full
+              border-[6px] border-purple-500
               flex items-center justify-center
               transition-transform duration-300
             "
-          >
+  >
+
             <img
               src={profile}
               alt="Sakshi Nigam"

@@ -7,6 +7,7 @@
 ![Framer Motion](https://img.shields.io/badge/Framer--Motion-Animations-purple)
 ![Deployment](https://img.shields.io/badge/Deployed%20On-Vercel-black?logo=vercel)
 ![Status](https://img.shields.io/badge/Status-Live-success)
+![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)
 
 ---
 
@@ -43,7 +44,18 @@ The focus is on **clean UI/UX**, smooth animations, responsiveness, and modern f
 - **Deployment:** Vercel  
 
 ---
+## 📌 License
+This project is open-source and available for learning and inspiration.  
+Feel free to fork and customize with proper credit.
 
+---
+
+**Author:** Sakshi Nigam  
+
+
+---
+
+⭐ If you like this project, don’t forget to **star the repository**!
 
 
 

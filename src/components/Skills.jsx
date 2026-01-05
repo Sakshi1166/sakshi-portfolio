@@ -11,7 +11,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ amount: 0.3 }}
-        className="text-[34px] font-semibold text-white mb-14 pop-hover"
+        className="section-bar text-[34px] font-semibold text-white mb-12"
       >
         Skills
       </motion.h2>

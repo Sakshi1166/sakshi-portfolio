@@ -37,7 +37,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: false }}
-            className="text-[34px] font-semibold text-white mb-8 pop-hover"
+            className="section-bar text-[34px] font-semibold text-white mb-8"
           >
             Contact
           </motion.h2>
@@ -73,7 +73,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: false }}
-            className="text-[34px] font-semibold text-white mb-8 pop-hover"
+            className="section-bar text-[34px] font-semibold text-white mb-8"
           >
             Social Links
           </motion.h2>
@@ -127,7 +127,7 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: false }}
-        className="mt-20 text-center text-gray-400 text-[15px] pop-hover"
+        className="section-bar mt-20 mx-auto text-center text-gray-400 text-[15px]"
       >
         © 2026 Sakshi Nigam
       </motion.p>

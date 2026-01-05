@@ -18,67 +18,57 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system;
 }
 
-/* Base styles */
-body {
-  background-color: #0b1120;
-  color: #e5e7eb;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
-}
-
-/* Cursor blink animation */
-@keyframes blink {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.animate-blink {
-  animation: blink 1.2s infinite;
-}
-
-/* Bubble pop hover effect */
+/* ---------- COMMON HOVER ---------- */
 .pop-hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pop-hover:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.45);
 }
 
-/* Desktop font boost */
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
+/* ---------- SECTION / NAV PILL ---------- */
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 14px;            /* 👈 thin padding */
+  border-radius: 9999px;        /* 👈 rounded edges */
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease,  transform 0.25s ease;
+}
+
+.section-pill:hover {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+}
+
+/* ---------- FULL WIDTH SECTION HEADING (ULTRA THIN) ---------- */
+.section-bar {
+  width: 100%;
+  padding: 0px 8px;                /* ⬅ ultra thin height */
+  border-radius: 9999px;
+  background: transparent;
+  transition: 
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.section-bar:hover {
+  background: rgba(255, 255, 255, 0.045);  /* very subtle */
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.45); /* tight glow */
+}
+
+
+@media (max-width: 640px) {
+  .section-bar {
+    padding: 5px 14px;
   }
 }
 
-/*@keyframes webDevFade {
-  0% {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 640px) {
+  .section-pill {
+    padding: 5px 14px;
   }
 }
-
-.web-dev-animate {
-  display: inline-block;
-  animation: webDevFade 1.4s ease-in-out forwards;
-}*/
-
-/* Bubble pop hover */
-.pop-hover {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.pop-hover:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
-}
-
